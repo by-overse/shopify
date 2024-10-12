@@ -17,6 +17,7 @@ module.exports = {
   globals: {
     shopify: 'readonly',
   },
+  ignorePatterns: ['.eslintrc*'],
   rules: {
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 'off',
