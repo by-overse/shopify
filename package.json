@@ -1,6 +1,6 @@
 {
   "name": "@overse/shopify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Open source packages by-overse for working with Shopify.",
   "author": "Overse",
   "license": "MIT",
@@ -21,7 +21,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -b packages/*"
+    "build": "tsc -b packages/*",
+    "build:workspaces": "npm run build --workspaces"
   },
   "dependencies": {
     "zod": "^3.23.8"
