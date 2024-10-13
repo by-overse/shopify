@@ -20,3 +20,4 @@ export type { StorefrontApiClient } from './async/fetchStorefrontApi';
 export type { BaseFetchOptions, FetchFunction } from './hooks/useFetch';
 export type { FetchState } from './hooks/useFetchState';
 export type { ResourceName } from './string/encodeGlobalID';
+// export type * from '../../../types/extendedTypescript';

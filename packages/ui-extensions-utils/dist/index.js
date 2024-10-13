@@ -13,3 +13,4 @@ export { encodeGlobalID } from './string/encodeGlobalID';
 // Zod
 export { parseMetaobject } from './zod/parseMetaobject';
 export { zodMetaobjectKeys } from './zod/zodMetaobjectKeys';
+// export type * from '../../../types/extendedTypescript';
