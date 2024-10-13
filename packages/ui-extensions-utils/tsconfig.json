@@ -4,7 +4,9 @@
   // Changing options here won't affect the build of your extension
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "moduleResolution": "Node10"
+    "moduleResolution": "Node10",
+    "outDir": "./dist",
+    "rootDir": "src"
   },
   "include": ["src/**/*"]
 }

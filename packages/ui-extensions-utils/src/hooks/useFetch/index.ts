@@ -8,7 +8,7 @@ export type BaseFetchOptions = {
   retry?: boolean;
 };
 
-type FetchFunction<T> = () => Promise<T>;
+export type FetchFunction<T> = () => Promise<T>;
 
 /**
  * Fetches data and returns the data, loading state, and error state.

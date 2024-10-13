@@ -7,18 +7,18 @@ export type StorefrontApiClient = ReturnType<typeof useApi>['query'];
  *
  * You can use the generic type parameter to specify the shape of the data you expect to receive.
  *
- * @param query - The Storefront API query.
+ * @param query - The Storefront API client.
  * @param queryParams - The query parameters.
  * @returns The data from the Storefront API.
  */
 export async function fetchStorefrontApi<T>(
-  query: StorefrontApiClient,
+  storefront: StorefrontApiClient,
   ...queryParams: Parameters<StorefrontApiClient>
 ) {
   try {
     const [queryString, options] = queryParams;
 
-    const { data, errors } = await query<T, unknown>(queryString, {
+    const { data, errors } = await storefront<T, unknown>(queryString, {
       ...options,
     });
 

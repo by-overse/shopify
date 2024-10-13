@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/async/fetchStorefrontApi/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,+CAA+C,CAAC;AAE5E,MAAM,MAAM,mBAAmB,GAAG,UAAU,CAAC,OAAO,MAAM,CAAC,CAAC,OAAO,CAAC,CAAC;AAErE;;;;;;;;GAQG;AACH,wBAAsB,kBAAkB,CAAC,CAAC,EACxC,UAAU,EAAE,mBAAmB,EAC/B,GAAG,WAAW,EAAE,UAAU,CAAC,mBAAmB,CAAC,iCAoBhD"}

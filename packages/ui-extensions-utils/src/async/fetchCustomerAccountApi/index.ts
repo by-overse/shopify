@@ -1,14 +1,22 @@
+export type FetchCustomerAccountOptions = {
+  /** The API version to use. */
+  version?: string;
+  /** The query variables. */
+  variables?: Record<string | number | symbol, unknown>;
+};
+
 /**
  * Fetches customer account data from the Shopify Admin API.
  *
  * You can use the generic type parameter to specify the shape of the data you expect to receive.
  *
- * @param queryString - The GraphQL query string.
- * @param version - The API version, in the format 'YYYY-MM'.
+ * @param query - The GraphQL query string.
+ * @param options - The query options.
  * @returns The customer account data.
  */
-export async function fetchCustomerAccountApi<T>(queryString: Record<'query', string>, version: string) {
-  const URL = `shopify://customer-account/api/${version}/graphql.json`;
+export async function fetchCustomerAccountApi<T>(query: string, options: FetchCustomerAccountOptions) {
+  const { version, variables } = options;
+  const URL = `shopify://customer-account/api/${version || '2024-10'}/graphql.json`; // TODO - check if we can default to "latest" instead of a hardcoded version
 
   try {
     const { data, errors }: GraphQLResponse<T> = await (
@@ -17,7 +25,10 @@ export async function fetchCustomerAccountApi<T>(queryString: Record<'query', st
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(queryString),
+        body: JSON.stringify({
+          query,
+          variables,
+        }),
       })
     ).json();
 
@@ -34,7 +45,7 @@ export async function fetchCustomerAccountApi<T>(queryString: Record<'query', st
   return null;
 }
 
-type GraphQLResponse<T> = {
+export type GraphQLResponse<T> = {
   data?: T;
   errors?: RichGraphQLError[];
   extensions?: {
@@ -50,7 +61,7 @@ type GraphQLResponse<T> = {
   };
 };
 
-type RichGraphQLError = {
+export type RichGraphQLError = {
   message: string;
   extensions?: {
     code: string;

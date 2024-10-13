@@ -10,7 +10,7 @@ export function useFetchState<T>() {
   return stateArray;
 }
 
-type FetchState<T> = {
+export type FetchState<T> = {
   data?: T | null;
   loading: boolean;
   error?: unknown | null;

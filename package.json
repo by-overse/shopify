@@ -1,17 +1,28 @@
 {
   "name": "@overse/shopify",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc -b packages/*"
+  "description": "Open source packages by-overse for working with Shopify.",
+  "author": "Overse",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/by-overse/shopify"
+  },
+  "bugs": {
+    "url": "https://github.com/by-overse/shopify/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [],
-  "author": "Overse",
-  "license": "ISC",
-  "description": "",
   "workspaces": [
     "packages/*"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b packages/*"
+  },
   "dependencies": {
     "zod": "^3.23.8"
   },

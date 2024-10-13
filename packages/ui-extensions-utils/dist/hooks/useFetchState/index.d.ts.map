@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/hooks/useFetchState/index.ts"],"names":[],"mappings":"AAEA,wBAAgB,aAAa,CAAC,CAAC,8FAQ9B;AAED,MAAM,MAAM,UAAU,CAAC,CAAC,IAAI;IAC1B,IAAI,CAAC,EAAE,CAAC,GAAG,IAAI,CAAC;IAChB,OAAO,EAAE,OAAO,CAAC;IACjB,KAAK,CAAC,EAAE,OAAO,GAAG,IAAI,CAAC;CACxB,CAAC"}

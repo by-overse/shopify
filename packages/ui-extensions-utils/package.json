@@ -1,18 +1,28 @@
 {
   "name": "@overse/ui-extensions-utils",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "1.1.0",
+  "description": "Utility functions for Shopify UI Extensions",
+  "author": "Overse",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/your-repo.git"
+    "url": "https://github.com/by-overse/shopify/tree/main/packages/ui-extensions-utils"
   },
-  "keywords": [],
-  "author": "Overse",
-  "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/by-overse/shopify/issues"
+  },
+  "keywords": [
+    "overse",
+    "utils",
+    "react",
+    "shopify",
+    "typescript",
+    "ui-extensions"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "@shopify/ui-extensions": "^2024.10.0",
     "@shopify/ui-extensions-react": "^2024.10.0",
@@ -21,5 +31,10 @@
   },
   "devDependencies": {
     "react-reconciler": "^0.29.2"
-  }
+  },
+  "files": [
+    "dist",
+    "src",
+    "!node_modules"
+  ]
 }
