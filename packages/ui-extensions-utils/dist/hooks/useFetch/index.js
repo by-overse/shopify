@@ -18,11 +18,11 @@ export const useFetch = (fetchFunction, { retry, suspend } = { suspend: false, r
                 setFetchState({ data, error: null, loading: false });
             }
             catch (error) {
+                console.error(error); // eslint-disable-line no-console
                 setFetchState({ data: null, error, loading: false });
             }
         }
-        // eslint-disable-next-line no-console
-        queryApi().catch(console.error);
+        queryApi().catch(console.error); // eslint-disable-line no-console
     }, [fetchFunction, fetchState.loading, retry, setFetchState, suspend]);
     return [fetchState.data, fetchState.loading, fetchState.error];
 };
