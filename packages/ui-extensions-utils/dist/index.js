@@ -6,7 +6,7 @@ export { fetchStorefrontApi } from './async/fetchStorefrontApi';
 export { useFetch } from './hooks/useFetch';
 export { useFetchState } from './hooks/useFetchState';
 // Constants
-export { CHECKOUT_EXTENSION_TARGETS, CUSTOMER_ACCOUNT_EXTENSION_TARGETS } from './constants/targets';
+export { CHECKOUT_EXTENSION_TARGET as CHECKOUT_EXTENSION_TARGETS, CUSTOMER_ACCOUNT_EXTENSION_TARGET as CUSTOMER_ACCOUNT_EXTENSION_TARGETS, } from './constants/targets';
 // String
 export { decodeGlobalID } from './string/decodeGlobalID';
 export { encodeGlobalID } from './string/encodeGlobalID';
