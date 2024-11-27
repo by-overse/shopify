@@ -1,6 +1,6 @@
 {
   "name": "@overse/ui-extensions-utils",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Utility functions for Shopify UI Extensions",
   "author": "Overse",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "typescript",
     "ui-extensions"
   ],
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
