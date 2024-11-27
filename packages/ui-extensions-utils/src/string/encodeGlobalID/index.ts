@@ -7,8 +7,42 @@
  * @param id - The ID of the resource
  * @returns Decoded Global ID, in the format `gid://shopify/resourceName/id`
  */
-export const encodeGlobalID = (resourceName: ResourceName, id: string | number) =>
+export const encodeGlobalID = (resourceName: ResourceName, id: string | number | bigint) =>
   `gid://shopify/${resourceName}/${id}`;
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type ResourceName = 'Metaobject' | 'Product' | 'Order' | 'Customer' | (string & {});
+export type ResourceName =
+  | 'Customer'
+  | 'Collection'
+  | 'DeliveryCarrierService'
+  | 'DeliveryLocationGroup'
+  | 'DeliveryProfile'
+  | 'DeliveryZone'
+  | 'DraftOrder'
+  | 'DraftOrderLineItem'
+  | 'Duty'
+  | 'EmailTemplate'
+  | 'Fulfillment'
+  | 'FulfillmentEvent'
+  | 'FulfillmentService'
+  | 'InventoryItem'
+  | 'InventoryLevel'
+  | 'LineItem'
+  | 'Location'
+  | 'MarketingEvent'
+  | 'MediaImage'
+  | 'Metafield'
+  | 'Metaobject'
+  | 'OnlineStoreArticle'
+  | 'OnlineStoreBlog'
+  | 'OnlineStorePage'
+  | 'Order'
+  | 'OrderTransaction'
+  | 'Product'
+  | 'ProductImage'
+  | 'ProductVariant'
+  | 'Refund'
+  | 'Shop'
+  | 'StaffMember'
+  | 'Theme'
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  | (string & {});
