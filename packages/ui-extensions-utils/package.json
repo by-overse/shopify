@@ -21,6 +21,7 @@
   ],
   "main": "dist/index.js",
   "scripts": {
+    "prebuild": "rimraf dist",
     "build": "tsc",
     "watch": "tsc -w",
     "publish": "npm publish --access public"
