@@ -7,7 +7,7 @@
  * @param options - The query options.
  * @returns The customer account data.
  */
-export async function fetchCustomerAccountApi(query, options) {
+async function fetchCustomerAccountApi(query, options) {
     const { version, variables } = options;
     const URL = `shopify://customer-account/api/${version || '2024-10'}/graphql.json`; // TODO - check if we can default to "latest" instead of a hardcoded version
     try {
@@ -32,3 +32,5 @@ export async function fetchCustomerAccountApi(query, options) {
     }
     return null;
 }
+
+export { fetchCustomerAccountApi };

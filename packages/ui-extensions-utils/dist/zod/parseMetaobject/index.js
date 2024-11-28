@@ -1,4 +1,5 @@
 import { z } from 'zod';
+
 /**
  * Converts a metaobject to an object, where the fields are typed and flattened.
  *
@@ -25,7 +26,7 @@ import { z } from 'zod';
  * // { name: 'Product 1', description: 'Description of product 1' }
  * ```
  */
-export function parseMetaobject(metaobject, objSchema) {
+function parseMetaobject(metaobject, objSchema) {
     //
     const object = z
         .object({
@@ -48,3 +49,5 @@ export function parseMetaobject(metaobject, objSchema) {
     });
     return object.parse(metaobject);
 }
+
+export { parseMetaobject };

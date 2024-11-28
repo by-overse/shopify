@@ -1,5 +1,6 @@
 import { useState } from 'react';
-export function useFetchState() {
+
+function useFetchState() {
     const stateArray = useState({
         data: null,
         loading: true,
@@ -7,3 +8,5 @@ export function useFetchState() {
     });
     return stateArray;
 }
+
+export { useFetchState };

@@ -17,7 +17,7 @@ module.exports = {
   globals: {
     shopify: 'readonly',
   },
-  ignorePatterns: ['.eslintrc*', '**/dist/*'],
+  ignorePatterns: ['.eslintrc*', '**/dist/*, "./rollup.config**'],
   rules: {
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 'off',

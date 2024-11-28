@@ -1,4 +1,5 @@
 import { z } from 'zod';
+
 // ------------------------------------------------ --------------------------------
 // # --- Utility to generate a typed metaobject schema
 /**
@@ -23,10 +24,12 @@ import { z } from 'zod';
  * // { id: '123', fields: [ { key: 'name', value: 'Product 1' }, { key: 'description', value: 'Description of product 1' } ] }
  * ```
  */
-export const zodMetaobjectKeys = (keys) => z.object({
+const zodMetaobjectKeys = (keys) => z.object({
     id: z.string(),
     fields: z.array(z.object({
         key: z.enum(keys),
         value: z.string(),
     })),
 });
+
+export { zodMetaobjectKeys };

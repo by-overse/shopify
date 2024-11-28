@@ -1,16 +1,10 @@
-// Async
-export { fetchApp } from './async/fetchApp';
-export { fetchCustomerAccountApi } from './async/fetchCustomerAccountApi';
-export { fetchStorefrontApi } from './async/fetchStorefrontApi';
-// Hook
-export { useFetch } from './hooks/useFetch';
-export { useFetchState } from './hooks/useFetchState';
-// Constants
-export { CHECKOUT_EXTENSION_TARGET as CHECKOUT_EXTENSION_TARGETS, CUSTOMER_ACCOUNT_EXTENSION_TARGET as CUSTOMER_ACCOUNT_EXTENSION_TARGETS, } from './constants/targets';
-// String
-export { decodeGlobalID } from './string/decodeGlobalID';
-export { encodeGlobalID } from './string/encodeGlobalID';
-// Zod
-export { parseMetaobject } from './zod/parseMetaobject';
-export { zodMetaobjectKeys } from './zod/zodMetaobjectKeys';
-// export type * from '../../../types/extendedTypescript';
+export { fetchApp } from './async/fetchApp/index.js';
+export { fetchCustomerAccountApi } from './async/fetchCustomerAccountApi/index.js';
+export { fetchStorefrontApi } from './async/fetchStorefrontApi/index.js';
+export { useFetch } from './hooks/useFetch/index.js';
+export { useFetchState } from './hooks/useFetchState/index.js';
+export { CHECKOUT_EXTENSION_TARGET, CUSTOMER_ACCOUNT_EXTENSION_TARGET } from './constants/targets.js';
+export { decodeGlobalID } from './string/decodeGlobalID/index.js';
+export { encodeGlobalID } from './string/encodeGlobalID/index.js';
+export { parseMetaobject } from './zod/parseMetaobject/index.js';
+export { zodMetaobjectKeys } from './zod/zodMetaobjectKeys/index.js';

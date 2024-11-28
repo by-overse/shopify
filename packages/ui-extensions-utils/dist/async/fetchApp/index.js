@@ -5,7 +5,7 @@
  * @param sessionToken - The session token to use for authentication.
  * @returns The response from the app.
  */
-export async function fetchApp(requestUrl, sessionToken) {
+async function fetchApp(requestUrl, sessionToken) {
     try {
         const token = await sessionToken.get();
         const res = await fetch(`${requestUrl}`, {
@@ -19,3 +19,5 @@ export async function fetchApp(requestUrl, sessionToken) {
     }
     return null;
 }
+
+export { fetchApp };

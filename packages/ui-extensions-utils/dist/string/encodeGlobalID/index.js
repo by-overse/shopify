@@ -7,4 +7,6 @@
  * @param id - The ID of the resource
  * @returns Decoded Global ID, in the format `gid://shopify/resourceName/id`
  */
-export const encodeGlobalID = (resourceName, id) => `gid://shopify/${resourceName}/${id}`;
+const encodeGlobalID = (resourceName, id) => `gid://shopify/${resourceName}/${id}`;
+
+export { encodeGlobalID };

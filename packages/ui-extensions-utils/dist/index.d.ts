@@ -3,7 +3,7 @@ export { fetchCustomerAccountApi } from './async/fetchCustomerAccountApi';
 export { fetchStorefrontApi } from './async/fetchStorefrontApi';
 export { useFetch } from './hooks/useFetch';
 export { useFetchState } from './hooks/useFetchState';
-export { CHECKOUT_EXTENSION_TARGET as CHECKOUT_EXTENSION_TARGETS, CUSTOMER_ACCOUNT_EXTENSION_TARGET as CUSTOMER_ACCOUNT_EXTENSION_TARGETS, } from './constants/targets';
+export { CHECKOUT_EXTENSION_TARGET, CUSTOMER_ACCOUNT_EXTENSION_TARGET } from './constants/targets';
 export { decodeGlobalID } from './string/decodeGlobalID';
 export { encodeGlobalID } from './string/encodeGlobalID';
 export { parseMetaobject } from './zod/parseMetaobject';

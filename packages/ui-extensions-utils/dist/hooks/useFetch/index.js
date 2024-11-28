@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useFetchState } from '../useFetchState';
+import { useFetchState } from '../useFetchState/index.js';
+
 /**
  * Fetches data and returns the data, loading state, and error state.
  *
@@ -7,7 +8,7 @@ import { useFetchState } from '../useFetchState';
  * @param options - The options for the fetch.
  * @returns The data, loading state, and error state.
  */
-export const useFetch = (fetchFunction, { retry, suspend } = { suspend: false, retry: false }) => {
+const useFetch = (fetchFunction, { retry, suspend } = { suspend: false, retry: false }) => {
     const [fetchState, setFetchState] = useFetchState();
     useEffect(() => {
         if (suspend || (!fetchState.loading && !retry))
@@ -26,3 +27,5 @@ export const useFetch = (fetchFunction, { retry, suspend } = { suspend: false, r
     }, [fetchFunction, fetchState.loading, retry, setFetchState, suspend]);
     return [fetchState.data, fetchState.loading, fetchState.error];
 };
+
+export { useFetch };

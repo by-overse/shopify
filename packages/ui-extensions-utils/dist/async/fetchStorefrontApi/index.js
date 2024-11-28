@@ -7,7 +7,7 @@
  * @param queryParams - The query parameters.
  * @returns The data from the Storefront API.
  */
-export async function fetchStorefrontApi(storefront, ...queryParams) {
+async function fetchStorefrontApi(storefront, ...queryParams) {
     try {
         const [queryString, options] = queryParams;
         const { data, errors } = await storefront(queryString, {
@@ -24,3 +24,5 @@ export async function fetchStorefrontApi(storefront, ...queryParams) {
     }
     return null;
 }
+
+export { fetchStorefrontApi };

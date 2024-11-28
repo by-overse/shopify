@@ -2,7 +2,7 @@
 // dot (.) replaced with one underscore (_) and hyphen (-) replaced with two underscores (__)
 // then, remove common prefixes (customer__account_, purchase_, etc.)
 // ---------------------------------------
-export const CUSTOMER_ACCOUNT_EXTENSION_TARGET = {
+const CUSTOMER_ACCOUNT_EXTENSION_TARGET = {
     order__index_block_render: 'customer-account.order-index.block.render',
     order__status_block_render: 'customer-account.order-status.block.render',
     order__status_cart__line__item_render__after: 'customer-account.order-status.cart-line-item.render-after',
@@ -24,7 +24,7 @@ export const CUSTOMER_ACCOUNT_EXTENSION_TARGET = {
     profile_company__location__staff_render__after: 'customer-account.profile.company-location-staff.render-after',
     profile_payment_render__after: 'customer-account.profile.payment.render-after',
 }; // prettier-ignore
-export const CHECKOUT_EXTENSION_TARGET = {
+const CHECKOUT_EXTENSION_TARGET = {
     address__autocomplete_format__suggestion: 'purchase.address-autocomplete.format-suggestion',
     address__autocomplete_suggest: 'purchase.address-autocomplete.suggest',
     cart__line__item_line__components_render: 'purchase.cart-line-item.line-components.render',
@@ -94,3 +94,5 @@ export const CHECKOUT_EXTENSION_TARGET = {
     // "Checkout::ThankYou::CustomerInformation::RenderAfter" : 'xx',
     // "Checkout::ThankYou::Dynamic::Render" : 'xx',
 }; // prettier-ignore
+
+export { CHECKOUT_EXTENSION_TARGET, CUSTOMER_ACCOUNT_EXTENSION_TARGET };
