@@ -28,6 +28,9 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c ../../rollup.config.js",
     "watch": "rollup -c ../../rollup.config.js -w",
+    "lint": "eslint .",
+    "test": "echo 'Tests not implemented yet'",
+    "prepublishOnly": "npm run build && npm run lint && npm run test",
     "publish": "npm publish"
   },
   "dependencies": {
