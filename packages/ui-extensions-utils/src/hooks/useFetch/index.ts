@@ -13,6 +13,8 @@ export type FetchFunction<T> = () => Promise<T>;
 /**
  * Fetches data and returns the data, loading state, and error state.
  *
+ * @deprecated This hook will be removed in a future version. Please use an alternative data fetching solution, like SWRL or React Query.
+ *
  * @param fetchFunction - The function that fetches the data.
  * @param options - The options for the fetch.
  * @returns The data, loading state, and error state.

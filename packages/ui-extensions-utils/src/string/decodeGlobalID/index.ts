@@ -8,5 +8,5 @@
  */
 export function decodeGlobalID(globalID: string): string {
   const parts = globalID.split('/');
-  return parts[parts.length - 1];
+  return parts[parts.length - 1] || '';
 }

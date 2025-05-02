@@ -1,6 +1,8 @@
 import { ExtensionTarget as CheckoutExtensionTarget } from '@shopify/ui-extensions/checkout';
 import { ExtensionTarget as CustomerAccountExtensionTarget } from '@shopify/ui-extensions/customer-account';
 
+// TODO - use Record<All posible values, value> instead of Record<string, value> to avoid missing values and making typos
+
 // Using the same naming convention/conversion that we use in prisma
 // dot (.) replaced with one underscore (_) and hyphen (-) replaced with two underscores (__)
 // then, remove common prefixes (customer__account_, purchase_, etc.)

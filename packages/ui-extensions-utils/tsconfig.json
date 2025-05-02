@@ -1,9 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "moduleResolution": "Node10",
+    "rootDir": "src",
     "outDir": "./dist",
-    "rootDir": "src"
+    "moduleResolution": "Node10"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist/**"]
 }
