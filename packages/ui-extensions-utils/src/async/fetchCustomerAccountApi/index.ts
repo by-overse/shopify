@@ -19,18 +19,19 @@ export async function fetchCustomerAccountApi<T>(query: string, options: FetchCu
   const URL = `shopify://customer-account/api/${version || '2024-10'}/graphql.json`; // TODO - check if we can default to "latest" instead of a hardcoded version
 
   try {
-    const { data, errors }: GraphQLResponse<T> = await (
-      await fetch(URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query,
-          variables,
-        }),
-      })
-    ).json();
+    const { data, errors }: GraphQLResponse<T> =
+      (await (
+        await fetch(URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query,
+            variables,
+          }),
+        })
+      ).json()) || {};
 
     if (errors) {
       throw new Error(errors.map((error) => error.message).join('\n'));

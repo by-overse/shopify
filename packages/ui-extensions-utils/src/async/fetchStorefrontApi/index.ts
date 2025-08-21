@@ -18,9 +18,10 @@ export async function fetchStorefrontApi<T>(
   try {
     const [queryString, options] = queryParams;
 
-    const { data, errors } = await storefront<T, unknown>(queryString, {
-      ...options,
-    });
+    const { data, errors } =
+      (await storefront<T, unknown>(queryString, {
+        ...options,
+      })) || {};
 
     if (errors) {
       throw new Error(errors.map((error) => error.message).join('\n'));
