@@ -18,10 +18,12 @@ export async function fetchStorefrontApi<T>(
   try {
     const [queryString, options] = queryParams;
 
-    const { data, errors } =
-      (await storefront<T, unknown>(queryString, {
-        ...options,
-      })) || {};
+    // TODO - find a way to type the Variables instead of unknown, that also scales with the change of versioning in the client (so we can rely in the underlying type)
+    const responseData = await storefront<T, unknown>(queryString, {
+      ...options,
+    });
+
+    const { data, errors } = responseData || {};
 
     if (errors) {
       throw new Error(errors.map((error) => error.message).join('\n'));

@@ -16,22 +16,22 @@ export type FetchCustomerAccountOptions = {
  */
 export async function fetchCustomerAccountApi<T>(query: string, options: FetchCustomerAccountOptions) {
   const { version, variables } = options;
-  const URL = `shopify://customer-account/api/${version || '2024-10'}/graphql.json`; // TODO - check if we can default to "latest" instead of a hardcoded version
+  const ENDPOINT = `shopify://customer-account/api/${version || '2025-07'}/graphql.json`; // TODO - check if we can default to "latest" instead of a hardcoded version
 
   try {
-    const { data, errors }: GraphQLResponse<T> =
-      (await (
-        await fetch(URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            query,
-            variables,
-          }),
-        })
-      ).json()) || {};
+    const response = await fetch(ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query,
+        variables,
+      }),
+    });
+
+    const responseData: GraphQLResponse<T> = await response.json();
+    const { data, errors } = responseData || {};
 
     if (errors) {
       throw new Error(errors.map((error) => error.message).join('\n'));
