@@ -36,7 +36,7 @@ export async function fetchCustomerAccountApi<T>(query: string, options: FetchCu
 
 export type GraphQLResponse<T> = {
   data?: T;
-  errors?: RichGraphQLError[];
+  errors?: RichAccountApiGraphQLError[];
   extensions?: {
     cost: {
       requestedQueryCost: number;
@@ -50,12 +50,12 @@ export type GraphQLResponse<T> = {
   };
 };
 
-export type RichGraphQLError = {
+export type RichAccountApiGraphQLError = {
   message: string;
   extensions?: {
-    code: string;
     fieldName?: string;
     typeName?: string;
+    code: StringWithAutocomplete<'ACCESS_DENIED' | 'THROTTLED' | 'SHOP_INACTIVE' | 'INTERNAL_SERVER_ERROR'>;
   };
   locations: {
     column: number;
@@ -63,3 +63,6 @@ export type RichGraphQLError = {
   }[];
   path?: string[];
 };
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type StringWithAutocomplete<T extends string> = T | (string & {});
