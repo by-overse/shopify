@@ -15,25 +15,12 @@ export async function fetchStorefrontApi<T>(
   storefront: StorefrontApiClient,
   ...queryParams: Parameters<StorefrontApiClient>
 ) {
-  try {
-    const [queryString, options] = queryParams;
+  const [queryString, options] = queryParams;
 
-    // TODO - find a way to type the Variables instead of unknown, that also scales with the change of versioning in the client (so we can rely in the underlying type)
-    const responseData = await storefront<T, unknown>(queryString, {
-      ...options,
-    });
+  // TODO - find a way to type the Variables instead of unknown, that also scales with the change of versioning in the client (so we can rely in the underlying type)
+  const responseData = await storefront<T, unknown>(queryString, {
+    ...options,
+  });
 
-    const { data, errors } = responseData || {};
-
-    if (errors) {
-      throw new Error(errors.map((error) => error.message).join('\n'));
-    }
-
-    return data;
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(error);
-  }
-
-  return null;
+  return responseData;
 }

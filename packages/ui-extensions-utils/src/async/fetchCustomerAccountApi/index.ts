@@ -6,7 +6,7 @@ export type FetchCustomerAccountOptions = {
 };
 
 /**
- * Fetches customer account data from the Shopify Admin API.
+ * Fetches customer account data from the Shopify Customer Account API.
  *
  * You can use the generic type parameter to specify the shape of the data you expect to receive.
  *
@@ -18,32 +18,20 @@ export async function fetchCustomerAccountApi<T>(query: string, options: FetchCu
   const { version, variables } = options;
   const ENDPOINT = `shopify://customer-account/api/${version || '2025-07'}/graphql.json`; // TODO - check if we can default to "latest" instead of a hardcoded version
 
-  try {
-    const response = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query,
-        variables,
-      }),
-    });
+  const response = await fetch(ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
+  });
 
-    const responseData: GraphQLResponse<T> = await response.json();
-    const { data, errors } = responseData || {};
+  const responseData: GraphQLResponse<T> = await response.json();
 
-    if (errors) {
-      throw new Error(errors.map((error) => error.message).join('\n'));
-    }
-
-    return data;
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(error);
-  }
-
-  return null;
+  return responseData;
 }
 
 export type GraphQLResponse<T> = {
