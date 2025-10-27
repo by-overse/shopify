@@ -1,9 +1,11 @@
 {
-  "name": "@overse/shopify",
-  "version": "1.0.1",
-  "description": "Open source packages by-overse for working with Shopify.",
-  "author": "Overse",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
   "license": "MIT",
+  "author": "Overse",
+  "name": "@overse/shopify",
+  "description": "Open source packages by-overse for working with Shopify.",
   "repository": {
     "type": "git",
     "url": "https://github.com/by-overse/shopify"
@@ -11,19 +13,10 @@
   "bugs": {
     "url": "https://github.com/by-overse/shopify/issues"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [],
   "workspaces": [
     "packages/*"
   ],
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "rollup -c",
     "build:workspaces": "npm run build --workspaces"
   },
   "dependencies": {
